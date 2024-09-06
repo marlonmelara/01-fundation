@@ -1,24 +1,14 @@
 ---
-import Navbar from "../components/Navbar.astro";
-
-
+import MainLayout from "../layouts/MainLayout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-    <Navbar/>
+<MainLayout title="Home Page">
 		<h1>Astro</h1>
     <p>Hello, world!</p>
     <p>Momento actual: {new Date().toLocaleTimeString()}</p>
     <p id="current-time">Momento actual real:</p>
     <footer>Año: 2023</footer>
+
 <script>
   // Asegúrate de que el código se ejecute solo después de que el DOM esté listo
   document.addEventListener('DOMContentLoaded', () => {
@@ -42,5 +32,4 @@ import Navbar from "../components/Navbar.astro";
     setInterval(updateTime, 1000);
   });
 </script>
-	</body>
-</html>
+</MainLayout>
