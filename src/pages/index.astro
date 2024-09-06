@@ -1,4 +1,6 @@
 ---
+import Navbar from "../components/Navbar.astro";
+
 
 ---
 
@@ -11,6 +13,34 @@
 		<title>Astro</title>
 	</head>
 	<body>
+    <Navbar/>
 		<h1>Astro</h1>
+    <p>Hello, world!</p>
+    <p>Momento actual: {new Date().toLocaleTimeString()}</p>
+    <p id="current-time">Momento actual real:</p>
+    <footer>Año: 2023</footer>
+<script>
+  // Asegúrate de que el código se ejecute solo después de que el DOM esté listo
+  document.addEventListener('DOMContentLoaded', () => {
+    // Selecciona el footer y el párrafo del tiempo actual
+    const footer = document.querySelector('footer') as HTMLElement;
+    const currentTimeParagraph = document.querySelector('#current-time') as HTMLParagraphElement;
+
+    // Muestra el año actual en el footer
+    const currentYear: number = new Date().getFullYear();
+    footer.innerText = `&copy ${currentYear}`;
+
+    // Función para actualizar el tiempo actual real
+    const updateTime = () => {
+      currentTimeParagraph.innerText = `Momento actual real: ${new Date().toLocaleTimeString()}`;
+    };
+
+    // Actualiza el tiempo inmediatamente al cargar la página
+    updateTime();
+
+    // Actualiza el tiempo cada segundo
+    setInterval(updateTime, 1000);
+  });
+</script>
 	</body>
 </html>
