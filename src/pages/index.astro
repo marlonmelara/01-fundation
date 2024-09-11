@@ -10,7 +10,7 @@ import MainLayout from "../layouts/MainLayout.astro";
     <footer>Año: 2023</footer>
 
 <script>
-  // Asegúrate de que el código se ejecute solo después de que el DOM esté listo
+  // Asegurar de que el código se ejecute solo después de que el DOM esté listo
   document.addEventListener('DOMContentLoaded', () => {
     // Selecciona el footer y el párrafo del tiempo actual
     const footer = document.querySelector('footer') as HTMLElement;
@@ -18,7 +18,7 @@ import MainLayout from "../layouts/MainLayout.astro";
 
     // Muestra el año actual en el footer
     const currentYear: number = new Date().getFullYear();
-    footer.innerText = `&copy ${currentYear}`;
+    footer.innerText = `© ${currentYear}`;
 
     // Función para actualizar el tiempo actual real
     const updateTime = () => {
