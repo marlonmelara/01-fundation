@@ -7,18 +7,13 @@ import MainLayout from "../layouts/MainLayout.astro";
     <p>Hello, world!</p>
     <p>Momento actual: {new Date().toLocaleTimeString()}</p>
     <p id="current-time">Momento actual real:</p>
-    <footer>Año: 2023</footer>
+
 
 <script>
   // Asegurar de que el código se ejecute solo después de que el DOM esté listo
   document.addEventListener('DOMContentLoaded', () => {
-    // Selecciona el footer y el párrafo del tiempo actual
-    const footer = document.querySelector('footer') as HTMLElement;
+    // Selecciona el párrafo del tiempo actual
     const currentTimeParagraph = document.querySelector('#current-time') as HTMLParagraphElement;
-
-    // Muestra el año actual en el footer
-    const currentYear: number = new Date().getFullYear();
-    footer.innerText = `© ${currentYear}`;
 
     // Función para actualizar el tiempo actual real
     const updateTime = () => {
